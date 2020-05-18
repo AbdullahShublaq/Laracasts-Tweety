@@ -40,6 +40,9 @@
         <p class="text-sm mb-3">
             {{ $tweet->body }}
         </p>
+        @if($tweet->image)
+            <img class="border border-gray-400 rounded-xl" src="{{ $tweet->image }}" alt="">
+        @endif
 
         <x-like-buttons :tweet="$tweet"></x-like-buttons>
     </div>

@@ -17,6 +17,7 @@ class CreateTweetsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('body');
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

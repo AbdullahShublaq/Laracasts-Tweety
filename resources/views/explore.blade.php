@@ -6,7 +6,8 @@
                     <img src="{{ $user->avatar }}" alt="{{ $user->name }}" width="60"
                          class="mr-4 rounded">
                     <div>
-                        <h4 class="font-bold">{{ '@'.$user->username }}</h4>
+                        <h4 class="font-bold">{{ $user->name }}</h4>
+                        <h6 class="text-xs">{{ '@'.$user->username }}</h6>
                     </div>
                 </a>
 

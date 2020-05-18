@@ -1,8 +1,14 @@
 <div class="border border-blue-400 rounded-lg py-6 px-8 mb-8">
-    <form action="/tweets" method="POST">
+    <form action="tweets" method="POST" enctype="multipart/form-data">
         @csrf
 
         <textarea name="body" class="w-full px-4 py-2" placeholder="What's up doc?" required></textarea>
+
+        <label for="image" class="uppercase font-semibold text-xs text-gray-700">Image</label>
+        <div class="flex">
+            <input type="file" class="border border-gray-400 p-2 w-full"
+                   name="image" id="image">
+        </div>
 
         <hr class="my-4">
 
@@ -27,6 +33,9 @@
     </form>
 
     @error('body')
+    <p class="text-red-500 text-sm mt-4">{{ $message }}</p>
+    @enderror
+    @error('image')
     <p class="text-red-500 text-sm mt-4">{{ $message }}</p>
     @enderror
 

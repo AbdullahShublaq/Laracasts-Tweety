@@ -1,4 +1,4 @@
-<div class="flex">
+<div class="flex mt-2">
     <form action="/tweets/{{ $tweet->id }}/like" method="POST">
         @csrf
         <button type="submit">

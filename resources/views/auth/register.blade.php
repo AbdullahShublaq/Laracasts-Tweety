@@ -110,10 +110,16 @@
 
                 <div>
                     <button type="submit"
-                            class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+                            class="bg-blue-400 text-white rounded mr-2 py-2 px-4 hover:bg-blue-500"
                     >
                         Register
                     </button>
+
+                    @if (Route::has('login'))
+                        <a class="text-lg text-gray-700 " href="{{ route('login') }}">
+                            {{ __('Login') }}
+                        </a>
+                    @endif
                 </div>
             </form>
         </x-panel>

@@ -21,4 +21,9 @@ class Tweet extends Model
         return 'id';
     }
 
+    public function getImageAttribute($value)
+    {
+        return $value ? asset('storage/' . $value) : FALSE;
+    }
+
 }
