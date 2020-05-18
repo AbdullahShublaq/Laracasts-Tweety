@@ -83,12 +83,20 @@ class ProfilesController extends Controller
             'name' => ['required', 'string', 'max:255', 'alpha_dash'],
             'username' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user)],
             'avatar' => ['image'],
+            'banner' => ['image'],
+            'description' => ['nullable', 'string', 'max:255'],
             'email' => ['required', 'email', 'string', Rule::unique('users')->ignore($user)],
-            'password' => ['required', 'confirmed', 'string', 'min:8', 'max:255'],
+            'password' => ['nullable', 'confirmed', 'string', 'min:8', 'max:255'],
         ]);
 
         if ($request->avatar) {
             $attributes['avatar'] = $request->avatar->store('avatars');
+        }
+        if ($request->banner) {
+            $attributes['banner'] = $request->banner->store('banners');
+        }
+        if ($request->description) {
+            $attributes['description'] = $request->description;
         }
 
         $user->update($attributes);

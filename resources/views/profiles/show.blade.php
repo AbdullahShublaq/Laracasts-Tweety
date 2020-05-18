@@ -1,7 +1,7 @@
 <x-app>
     <header class="mb-6 relative">
         <div class="relative">
-            <img src="/images/default-profile-banner.jpg" alt="profile-banner" class="mb-2">
+            <img src="{{ $user->banner }}" alt="profile-banner" class="mb-2 rounded rounded-xl" style="height: 300px; width: 100%">
 
             <img src="{{ $user->avatar }}" alt=""
                  class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
@@ -27,9 +27,7 @@
         </div>
 
         <p class="text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam assumenda distinctio dolorem, ea eaque
-            enim, esse facilis illo neque obcaecati pariatur praesentium quasi quis sunt temporibus totam ut
-            voluptatibus!
+            {{ $user->description }}
         </p>
 
 

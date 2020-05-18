@@ -14,6 +14,7 @@
             </li>
         @empty
             <li>No Friends Yet!</li>
+            <a href="/explore" class="text-xs text-blue-600">Let's Follow Friends</a>
         @endforelse
     </ul>
 </div>

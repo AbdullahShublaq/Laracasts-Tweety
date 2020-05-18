@@ -42,6 +42,11 @@ class User extends Authenticatable
         return asset($value ? 'storage/' . $value : '/images/default-avatar.jpeg');
     }
 
+    public function getBannerAttribute($value)
+    {
+        return asset($value ? 'storage/' . $value : '/images/default-profile-banner.jpg');
+    }
+
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
