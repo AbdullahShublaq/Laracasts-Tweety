@@ -1,5 +1,5 @@
 <div class="border border-blue-400 rounded-lg py-6 px-8 mb-8">
-    <form action="tweets" method="POST">
+    <form action="/tweets" method="POST">
         @csrf
 
         <textarea name="body" class="w-full px-4 py-2" placeholder="What's up doc?" required></textarea>
@@ -12,7 +12,7 @@
             <button type="submit"
                     class="bg-blue-500 hover:bg-blue-600 rounded-xl shadow py-2  px-10 text-sm text-white">
                 <div class="flex items-center">
-                    <span class="text-xs text-white">Publis</span>
+                    <span class="text-xs text-white">Publish</span>
 
                     <svg viewBox="0 0 20 20" class="text-white ml-1 w-3">
                         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

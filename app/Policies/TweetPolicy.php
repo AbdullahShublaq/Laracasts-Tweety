@@ -6,12 +6,13 @@ use App\Tweet;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class TweetPolicy
 {
     use HandlesAuthorization;
 
-    public function edit(User $currentUser, User $user)
+    public function destroy(User $currentUser, Tweet $tweet)
     {
-        return $currentUser->is($user);
+        //
+        return $currentUser->is($tweet->user);
     }
 }

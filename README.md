@@ -21,6 +21,6 @@ This is the repository for the "Laravel From Scratch" [final project](https://la
 4. Add a pop-up flash message when a user publishes a tweet or follows someone.
 5. Consider adding [Laravel Livewire](https://laravel-livewire.com) to allow for more interactive forms.
 6. When writing a new tweet, display the number of remaining characters they're allowed.
-7. Allow tweets to be deleted.
+7. Allow tweets to be deleted. - ![#6dff00](https://via.placeholder.com/15/6dff00/000000?text=+) `Completed`
 8. Add support for mentions and notifications.
 9. Work on responsiveness.

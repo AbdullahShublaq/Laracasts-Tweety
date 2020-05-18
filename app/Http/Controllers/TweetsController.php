@@ -87,11 +87,15 @@ class TweetsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Tweet $tweet
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Tweet $tweet)
     {
         //
+        $tweet->delete();
+
+        return back();
     }
 }
