@@ -29,7 +29,7 @@ trait Likable
 
     public function like($user = NULL, $liked = TRUE)
     {
-        if ($this->isLikedBy($user) || $this->isDislikedBy($user)) {
+        if (($liked && $this->isLikedBy($user)) || (!$liked && $this->isDislikedBy($user))) {
             $this->deleteLike($user);
         } else {
             $this->likes()->updateOrCreate(
@@ -53,6 +53,13 @@ trait Likable
         return (bool) $user->likes->where('tweet_id', $this->id)->where('liked', FALSE)->count();
     }
 
+    public function deleteLike(User $user)
+    {
+        $like = $user->likes
+            ->where('tweet_id', $this->id)
+            ->first();
+        $like->delete();
+    }
 
     public function likes()
     {
