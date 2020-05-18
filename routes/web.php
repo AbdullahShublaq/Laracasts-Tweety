@@ -32,7 +32,6 @@ Route::middleware('auth')->group(function (){
 
     //explore
     Route::get('explore', 'ExploreController@index');
-
 });
 
 Route::get('profiles/{user:username}', 'ProfilesController@show')->name('profile');

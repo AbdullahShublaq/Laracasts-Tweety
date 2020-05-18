@@ -11,7 +11,7 @@
                 {{--end of sidebar--}}
 
                 {{--start of content--}}
-                <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
+                <div class="flex-1 lg:mx-10" style="max-width: 700px">
                     {{ $slot }}
                 </div>
                 {{--end of content--}}

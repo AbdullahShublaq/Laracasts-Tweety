@@ -41,7 +41,16 @@
             {{ $tweet->body }}
         </p>
         @if($tweet->image)
-            <img class="border border-gray-400 rounded-xl" src="{{ $tweet->image }}" alt="">
+            {{--<div class="border border-gray-400 rounded-xl"--}}
+                 {{--style="--}}
+                         {{--background-image: url({{ $tweet->image }});--}}
+                         {{--background-size: unset;--}}
+                         {{--background-repeat: no-repeat;--}}
+                         {{--height: 300px; width: 70%"--}}
+            {{-->--}}
+
+            {{--</div>--}}
+            <img class="border border-gray-400 rounded-xl" style="max-height: 350px" src="{{ $tweet->image }}" alt="">
         @endif
 
         <x-like-buttons :tweet="$tweet"></x-like-buttons>
