@@ -20,12 +20,18 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function (){
     //tweets
     Route::get('tweets', 'TweetsController@index')->name('home');
+    Route::get('tweets/{tweet:id}', 'TweetsController@show');
     Route::post('tweets', 'TweetsController@store');
     Route::delete('tweets/{tweet:id}', 'TweetsController@destroy')->middleware('can:destroy,tweet');
+
     Route::post('tweets/{tweet}/like', 'TweetLikesController@store');
     Route::delete('tweets/{tweet}/like', 'TweetLikesController@destroy');
 
+    Route::post('tweets/{tweet}/comment', 'TweetCommentsController@store');
+    Route::delete('tweets/{tweet}/comment/{comment}', 'TweetCommentsController@destroy')->middleware('can:destroy,comment');
+
     //profiles
+    Route::get('profiles/{user:username}', 'ProfilesController@show')->name('profile');
     Route::post('profiles/{user:username}/follow', 'FollowsController@store')->name('follow');
     Route::get('profiles/{user:username}/edit', 'ProfilesController@edit')->middleware('can:edit,user');
     Route::patch('profiles/{user:username}', 'ProfilesController@update')->middleware('can:edit,user');
@@ -33,7 +39,5 @@ Route::middleware('auth')->group(function (){
     //explore
     Route::get('explore', 'ExploreController@index');
 });
-
-Route::get('profiles/{user:username}', 'ProfilesController@show')->name('profile');
 
 Auth::routes(['reset' => FALSE]);

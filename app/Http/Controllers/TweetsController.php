@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Tweet;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class TweetsController extends Controller
 {
@@ -61,12 +60,17 @@ class TweetsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param Tweet $tweet
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Tweet $tweet)
     {
         //
+        return view('tweets.show', [
+            'tweet' => Tweet::where('id', $tweet->id)
+                ->withLikes()
+                ->first(),
+        ]);
     }
 
     /**

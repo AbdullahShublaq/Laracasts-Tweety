@@ -67,6 +67,9 @@
 <div class="flex-center position-ref full-height">
 
     <div class="content">
+        <h1>
+            <img src="images/logo.svg" alt="Tweety">
+        </h1>
         <div class="title m-b-md">
             Tweety
         </div>

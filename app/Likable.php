@@ -30,7 +30,7 @@ trait Likable
     public function like($user = NULL, $liked = TRUE)
     {
         if (($liked && $this->isLikedBy($user)) || (!$liked && $this->isDislikedBy($user))) {
-            $this->likes()->delete();
+            $this->likes()->where('user_id', $user->id)->delete();
         } else {
             $this->likes()->updateOrCreate(
                 [
