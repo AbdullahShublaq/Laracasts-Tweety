@@ -39,7 +39,7 @@
             </div>
         </h5>
 
-        <p class="text-sm mb-3">
+        <p class="text-sm mb-3" style="word-wrap: break-word; max-width: 600px">
             {{ $tweet->body }}
         </p>
         @if($tweet->image)

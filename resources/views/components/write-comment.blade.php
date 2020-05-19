@@ -2,7 +2,7 @@
     @csrf
     <div>
         <textarea id="comment_body"
-                  class="border border-gray-500 p-1 w-full pl-2 rounded-lg focus:border-white"
+                  class="border border-gray-500 px-4 py-2 w-full rounded-lg focus:border-white"
                   name="comment_body"
                   placeholder="Write Comment..."></textarea>
 

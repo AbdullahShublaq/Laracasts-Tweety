@@ -40,7 +40,7 @@ class TweetsController extends Controller
         //
 //        dd($request);
         $attributes = $request->validate([
-            'body' => 'required|max:255',
+            'body' => 'required|max:191',
             'image' => 'nullable|image',
         ]);
 
@@ -51,7 +51,7 @@ class TweetsController extends Controller
         $result = Tweet::create([
             'user_id' => auth()->user()->id,
             'body' => $attributes['body'],
-            'image' => $attributes['image']
+            'image' => $attributes['image'] ?? NULL
         ]);
 
         return redirect()->route('home');

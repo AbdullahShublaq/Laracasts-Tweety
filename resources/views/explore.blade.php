@@ -32,7 +32,7 @@
     </div>
 
     <div class="border border-gray-400 p-4 rounded-xl">
-        @foreach($users as $user)
+        @forelse($users as $user)
             <div class="flex border border-gray-400 rounded-lg mb-3 justify-between p-1">
                 <a href="{{ $user->path() }}" class="flex items-center">
                     <img src="{{ $user->avatar }}" alt="{{ $user->name }}" width="60"
@@ -47,7 +47,10 @@
                     <x-follow-button :user="$user"></x-follow-button>
                 </div>
             </div>
-        @endforeach
+
+        @empty
+            <div class="flex justify-center text-blue-500 font-bold">There is no results...</div>
+        @endforelse
 
         {{ $users->links() }}
     </div>

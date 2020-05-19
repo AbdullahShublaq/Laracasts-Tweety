@@ -39,7 +39,7 @@ class TweetCommentsController extends Controller
     {
         //
         $attributes = $request->validate([
-            'comment_body' => 'required|max:255',
+            'comment_body' => 'required|max:191',
         ]);
 
         $tweet->comment(auth()->user(), $attributes['comment_body']);

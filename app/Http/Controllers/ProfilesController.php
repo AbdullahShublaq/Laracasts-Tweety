@@ -80,13 +80,13 @@ class ProfilesController extends Controller
     {
         //
         $attributes = $request->validate([
-            'name' => ['required', 'string', 'max:255', 'alpha_dash'],
-            'username' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user)],
+            'name' => ['required', 'string', 'max:191', 'alpha_dash'],
+            'username' => ['required', 'string', 'max:191', Rule::unique('users')->ignore($user)],
             'avatar' => ['image'],
             'banner' => ['image'],
-            'description' => ['nullable', 'string', 'max:255'],
+            'description' => ['nullable', 'string', 'max:191'],
             'email' => ['required', 'email', 'string', Rule::unique('users')->ignore($user)],
-            'password' => ['nullable', 'confirmed', 'string', 'min:8', 'max:255'],
+            'password' => ['nullable', 'confirmed', 'string', 'min:8', 'max:191'],
         ]);
 
         if ($request->avatar) {
