@@ -24,3 +24,6 @@ This is the repository for the "Laravel From Scratch" [final project](https://la
 7. Allow tweets to be deleted. - ![#6dff00](https://via.placeholder.com/15/6dff00/000000?text=+) `Completed`
 8. Add support for mentions and notifications.
 9. Work on responsiveness.
+
+## Extra Additions
+10. Add comments to a tweet. - ![#6dff00](https://via.placeholder.com/15/6dff00/000000?text=+) `Completed`
