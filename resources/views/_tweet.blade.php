@@ -47,7 +47,8 @@
         @endif
 
         <x-like-buttons :tweet="$tweet"></x-like-buttons>
-
+		
+		<p class="font-semibold font-xs mt-4">Comments (<span class="text-xs">{{ $tweet->comments->count() }}</span>)</p>
         <x-comments :comments="$tweet->comments->take(3)"></x-comments>
 
         @if($tweet->comments->count() > 0)

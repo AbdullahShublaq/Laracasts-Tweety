@@ -40,4 +40,4 @@ Route::middleware('auth')->group(function (){
     Route::get('explore', 'ExploreController@index');
 });
 
-Auth::routes(['reset' => FALSE]);
+Auth::routes();

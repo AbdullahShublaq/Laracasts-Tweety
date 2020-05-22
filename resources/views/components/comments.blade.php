@@ -1,5 +1,3 @@
-<p class="font-semibold font-xs mt-4">Comments :</p>
-
 <div class="border border-gray-500 rounded-lg mb-2">
 
     @forelse($comments as $comment)

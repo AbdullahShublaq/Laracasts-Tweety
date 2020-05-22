@@ -98,6 +98,9 @@ class ProfilesController extends Controller
         if ($request->description) {
             $attributes['description'] = $request->description;
         }
+		if ($request->password) {
+            $attributes['password'] = bcrypt($request->password);
+        }
 
         $user->update($attributes);
         return redirect($user->path());
