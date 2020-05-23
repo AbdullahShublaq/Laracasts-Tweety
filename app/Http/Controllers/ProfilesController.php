@@ -88,7 +88,7 @@ class ProfilesController extends Controller
             'email' => ['required', 'email', 'string', Rule::unique('users')->ignore($user)],
             'password' => ['nullable', 'confirmed', 'string', 'min:8', 'max:191'],
         ]);
-
+		
         if ($request->avatar) {
             $attributes['avatar'] = $request->avatar->store('avatars');
         }
@@ -97,11 +97,15 @@ class ProfilesController extends Controller
         }
         if ($request->description) {
             $attributes['description'] = $request->description;
-        }
+        }else{
+			unset($attributes['description']);
+		}
 		if ($request->password) {
             $attributes['password'] = bcrypt($request->password);
-        }
-
+        }else{
+			unset($attributes['password']);
+		}
+		
         $user->update($attributes);
         return redirect($user->path());
     }
